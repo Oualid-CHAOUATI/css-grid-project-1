@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+  font-family: "Poppins";
+  background: #d1dedd;
+  overflow-x: hidden;
+  max-width: 1800px;
+  margin: auto;
+  padding: 1em;
+  font-size: clamp(16px, 1.3vw, 23px);
+}
+
+ul,
+li {
+  padding: 0;
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3 {
+  color: #767f7e;
+}
+
+p {
+  color: #828b8a;
+}
+
+.img-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: skewX(5deg);
+}
+.img-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -0.4em;
+  background: conic-gradient(rgba(255, 255, 255, 0.296), rgba(0, 0, 0, 0.254), rgba(255, 255, 255, 0.296));
+}
+.img-wrapper img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.text-wrapper {
+  padding: 1em;
+}
+
+.hero-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3em;
+  align-items: center;
+  margin-bottom: 2em;
+  min-height: 20em;
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  gap: 1em;
+  justify-content: space-between;
+}
+.cards-wrapper .card {
+  border: 2px solid blue;
+  border-radius: 0.2em;
+  padding: 0.5em;
+}
+.cards-wrapper .card .img-wrapper {
+  height: 400px;
+}
+
+@media screen and (max-width: 1170px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .cards-wrapper .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cards-wrapper .card .text-wrapper {
+    padding-block: 3em;
+  }
+  .cards-wrapper .card .img-wrapper {
+    height: 100%;
+  }
+  .cards-wrapper .card .bottom .card-title {
+    margin-bottom: 0.5em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .card,
+  .hero-wrapper {
+    display: block !important;
+  }
+  .hero-wrapper .img-wrapper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.2;
+  }
+  .cards-wrapper .img-wrapper {
+    aspect-ratio: 1.2;
+    width: 100%;
+    height: auto !important;
+  }
+  .cards-wrapper .text-wrapper {
+    padding-block: 1em !important;
+  }
+}/*# sourceMappingURL=styles.css.map */
